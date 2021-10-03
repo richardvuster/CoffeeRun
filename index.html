@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Run</title>
+    <!--Was not working since i included the ../js/boostrap.min.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" >
+    <!--Jquery Modal-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    
+</head>
+<body class="container">
+    <header>
+        <h1>Coffee Run</h1>
+    </header>
+
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <!--Input elements go here-->
+                    <div class="form-group">
+                        <label for="coffeeOrder">Cofee Order</label>
+                        <input type="text" class="form-control" name="coffee" id="coffeeOrder" autofocus>    
+                    </div>
+                    <!-- Email input field-->
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input type="email" class="form-control" name="emailAddress" id="emailInput" value="" placeholder="yomom@yomom.com">    
+                    </div>
+                    <!--Radio Buttons
+                        all radio button has a attribute {name:'size'}, which tell the browser to only allows one of the 
+                        radio buttons to be checked at one time
+                    -->
+                    <div class="radio">
+                        <label for="short">
+                            <input type="radio" name="size" value="short">
+                            Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="short">
+                            <input type="radio" name="size" value="tall" checked>
+                            tall
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label for="short">
+                            <input type="radio" name="size" value="grande" >
+                            Grande
+                        </label>
+                    </div>
+                    <!--Drop Down-->
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select class="form-control" id="flavorShot"  name="flavor">
+                            <option value="">None</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                            <option value="butterscotch">Butterscotch</option>
+                            <option value="pumpkinSpice">Pumpkin Spice</option>
+                            <option value="hazelnut">Hazelnut</option>
+                            <option value="cinnamon">Cinnamon</option>
+                        </select>
+                    </div>
+                    <!-- range slider   -->
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <input type="range" name="strength" id="strengthLevel" type="range" value="30">
+                    </div>
+                    <!--submit & reset button-->
+                <!--Modal HTML embedded directly into document-->
+                <div id="ex1" class="modal">
+                   <p id="modalText"></p>
+                   <a href="#" rel="modal:close">Close</a>
+                </div>
+                <!--    <button type="submit" class="btn btn-default">Submit</button>   -->
+                <a href="#ex1" rel="modal:open"><button type="submit" class="btn btn-default">Submit</button></a>
+                 <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <!--Checklist-->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Pending Orders:</h4>
+                <div data-coffee-order="checklist">
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha512-AFwxAkWdvxRd9qhYYp1qbeRZj6/iTNmJ2GFwcxsMOzwwTaRwz2a/2TX225Ebcj3whXte1WGQb38cXE5j7ZQw3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</html>
